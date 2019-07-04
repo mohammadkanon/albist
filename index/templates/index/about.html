@@ -1,0 +1,74 @@
+{% extends 'index/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+	<section id="about-section">
+      <div id="about-text-box">
+        <p id='about-page-title'>About</p>
+   	    <span id='home-page-link'><a href="#">Home</a></span><span>/</span><span id='about-page-link'><a>About</a></spna>
+   	  </div>  
+   </section><!--       /About    -->
+
+
+   {% include 'index/about-us.html' %}
+
+
+   <section id="build-with-us">
+	      <div class="container">
+	         <div class="row">
+	             <div id="our-services-text-box">
+	                <p id='our-services-small-title'>BEST SERVIECE</p>
+	                <p id='our-services-big-title'>OUR WORK FLOW</p>
+	                <hr id="our-services-line"/>
+	             </div>
+
+                <div class="col-sm-12" id="about-us-part">
+		             <div class="col-sm-3">
+		                <i class="fas fa-lightbulb" id="about-page-icon-list"></i>
+		                <div id="best-service-list">
+		                  <p id="about-us-icon-title">PLANNING</p>
+		                  <p id="about-us-icon-x">X</p>
+		                  <p id="about-us-icon-des">Cras mattis consectetur purus sites samet it fermentum.</p>
+		                </div>
+		             </div>
+		             <div class="col-sm-3">
+		                <i class="fas fa-pen-nib" id="about-page-icon-list"></i>
+		                <div id="best-service-list">
+		                  <p id="about-us-icon-title">DESIGN</p>
+		                  <p id="about-us-icon-x">X</p>
+		                  <p id="about-us-icon-des">Cras mattis consectetur purus sites samet it fermentum.</p>
+		                </div>
+		             </div>
+		             <div class="col-sm-3">
+		                <i class="fas fa-bezier-curve" id="about-page-icon-list"></i>
+		                <div id="best-service-list">
+		                  <p id="about-us-icon-title">DEVELOPING</p>
+		                  <p id="about-us-icon-x">X</p>
+		                  <p id="about-us-icon-des">Cras mattis consectetur purus sites samet it fermentum.</p>
+		                </div>
+		             </div>
+		             <div class="col-sm-3">
+		                <i class="fas fa-desktop" id="about-page-icon-list"></i>
+		                <div id="best-service-list">
+		                  <p id="about-us-icon-title">PRESENTATION</p>
+		                  <p id="about-us-icon-x">X</p>
+		                  <p id="about-us-icon-des">Cras mattis consectetur purus sites samet it fermentum.</p>
+		                </div>
+		             </div>
+		        </div>     
+	             
+
+	             
+
+	         </div>
+	      </div>
+        </section><!--           /Build with us      -->
+
+
+
+        {% include 'index/client.html' %}
+
+
+{% endblock %}
