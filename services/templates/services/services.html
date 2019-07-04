@@ -1,0 +1,126 @@
+{% extends "index/base.html" %}
+
+
+{% block content %}
+
+	
+       <section id="about-section">
+          <div id="about-text-box">
+            <p id='about-page-title'>services</p>
+       	    <span id='home-page-link'><a href="#">Home</a></span><span>/</span><span id='about-page-link'><a>Services</a></spna>
+       	  </div>  
+       </section><!--       /About    -->
+
+
+       <section id="our-team">
+          <div class="container">
+             <div class="row">
+                 <div id="our-services-text-box">
+                    <p id='our-services-small-title'>WHAT WE DO</p>
+                    <p id='our-services-big-title'>BEST SERVICES WE OFFER</p>
+                    <hr id="our-services-line"/>
+                    <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers. Our approach is simple and iterative.Sed ut perspiciatis unde omnis.</p>
+                 </div>
+
+                 {% for object in best_service %}
+                 <div class="col-xs-12 col-sm-3" id="best-service-full-box">
+                     <div id="best-service-text-box">
+                         <p id="best-service-box-title">{{ object.best_service_title }}</p>
+                         <hr id="best-service-box-line">
+                         <p id="best-service-box-des">{{ object.best_service_details }}</p>
+                         <i class="fas fa-tv" id="best-service-box-icons"></i>
+                     </div>
+                 </div>
+                 {% endfor %}
+
+             </div>
+          </div>
+       </section><!--           /BEST SERVICES      -->  
+
+
+
+       <section id="services-number-section">
+          <div class="container">
+             <div class="row">
+                <div class="col-sm-3" id="number-icon-box-main">
+                   <span id="number-icon-box">
+                      500
+                      <i class="fas fa-anchor"></i>
+                   </span>
+                   <p id="serveice-number-des">Project Completed</p>
+                   <hr id="serveice-number-line">
+                </div>
+                <div class="col-sm-3" id="number-icon-box-main">
+                   <span id="number-icon-box">
+                      254 
+                      <i class="fas fa-pencil-ruler"></i>
+                   </span>
+                   <p id="serveice-number-des">Line Of Codes</p>
+                   <hr id="serveice-number-line">
+                </div>
+                <div class="col-sm-3" id="number-icon-box-main">
+                   <span id="number-icon-box">
+                      184
+                      <i class="far fa-heart"></i>
+                   </span>
+                   <p id="serveice-number-des">Happy Clients</p>
+                   <hr id="serveice-number-line">
+                </div>
+                <div class="col-sm-3" id="number-icon-box-main">
+                   <span id="number-icon-box">
+                      35k
+                      <i class="fas fa-bicycle"></i>
+                   </span>
+                   <p id="serveice-number-des">Km Drive</p>
+                   <hr id="serveice-number-line">
+                </div>
+             </div>
+          </div> 
+       </section><!--           /NUMBER SECTION      --> 
+
+       {% include 'index/ourfeaters.html' %}
+
+
+
+      <section id="our-plane">
+        <div class="container">
+           <div class="row">
+               <div id="our-services-text-box">
+                  <p id='our-services-small-title'>CHOOSE YOURS</p>
+                  <p id='our-services-big-title'>OUR PRICING PLAN</p>
+                  <hr id="our-services-line"/>
+                  <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers. Our approach is simple and iterative.Sed ut perspiciatis unde omnis.</p>
+               </div>
+              
+              {% for object in plans %}
+              <div class="col-sm-3" id="our-plan-price-col">
+                   <ul id="basic-plan-list">
+                      <li id="our-plan-name">
+                        <span>{{ object.plan }}</span>
+                      </li>
+                      <li id="our-plan-price">
+                      <span>$</span><span id="our-plan-main-price">{{ object.planpay }}</span><span id="our-plan-price-mon">Per Month</span>
+
+                      </li>
+                      {% for object in featurs %}
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ object.feature }}</span></li>
+                      {% endfor %}
+                      <!-- <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">100GB SPACE</span></li>
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">1 DOMAIN NAME</span></li>
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">500GB BANDWIDTH</span></li>
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">ENHANCED SERCURITY</span></li> -->
+                      <li id="button-list-row"><span id="our-plan-price-button">BUY NOW</span></li>
+                   </ul>
+              </div>
+
+             {% endfor %}
+
+           </div>
+        </div>
+      </section><!--           /Our plane     -->
+
+
+
+      {% include 'index/client.html' %} 
+
+{% endblock %}

@@ -113,36 +113,7 @@
 	      </div>
 	    </section> --><!--           /our-team     -->
 
-	    <section id="build-with-us">
-	      <div class="container">
-	         <div class="row">
-	             <div id="our-services-text-box">
-	                <p id='our-services-small-title'>WE DELIVER RESULTS</p>
-	                <p id='our-services-big-title'>BUILD A AMAZING WEBSITE WITH US</p>
-	                <hr id="our-services-line"/>
-	                <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers.</p>
-	             </div>
-
-	             {% for object in feater%}
-	             <div class="col-sm-3">
-	                <p id="we-build-min-title">{{ object.feater_title }}</p>
-	                <ul id="we-build-min-list">
-	                  <li><i class="fa fa-check"></i><span id="we-build-min-title">{{ object.feater_dep1 }}</span></li>
-	                  <li><i class="fa fa-check"></i><span id="we-build-min-title">{{ object.feater_dep2 }}</span></li>
-	                  <li><i class="fa fa-check"></i><span id="we-build-min-title">{{ object.feater_dep3 }}</span></li>
-	                  <li><i class="fa fa-check"></i><span id="we-build-min-title">{{ object.feater_dep4 }}</span></li>
-	                </ul>
-	             </div>
-	             {% endfor %}
-
-	             <div id="build-us-mobile">
-	                <img src="{% static 'img/iphone-land.png' %}" class="img-responsive">
-	             </div>
-	             
-
-	         </div>
-	      </div>
-	    </section> --><!--           /Build with us     -->
+	    {% include 'index/ourfeaters.html' %}
 
 	    <section id="build-brand-section">
 	      <div class="container">
