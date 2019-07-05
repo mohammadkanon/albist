@@ -23,6 +23,8 @@ urlpatterns = [
     path('', include(('index.urls', 'index'), namespace='index')),
     path('services/', include(('services.urls', 'services'), namespace='services')),
     path('portfolio/', include(('portfolio.urls', 'portfolio'), namespace='portfolio')),
+    path('pages/', include(('pages.urls', 'pages'), namespace='pages')),
+    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
 ]
 
 if settings.DEBUG:

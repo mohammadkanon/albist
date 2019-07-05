@@ -1,0 +1,51 @@
+{% extends 'index/base.html' %}
+
+{% block content %}
+	
+       <section id="about-section">
+          <div id="about-text-box">
+            <p id='about-page-title'>Blog</p>
+       	    <span id='home-page-link'><a href="#">Home</a></span><span>/</span><span id='about-page-link'><a>Blog</a></spna>
+       	  </div>  
+       </section><!--       /About    -->
+
+              <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+               	{% for object in mblog %}
+                  <div class="col-sm-9">
+                     <div id="blog-post-box">
+                         <img src="{{ object.blog_image.url }}" class="img-responsive" id="blog-main-img">
+                         <div id="who-post-blog">
+                            <span id="post-date"><i class="far fa-calendar-alt"></i>Agu29, 2018</span>
+                            <span id="post-date"><i class="far fa-user"></i>addmin</span>
+                            <span id="post-date"><i class="far fa-comments"></i>Featured</span>
+                         </div>
+                         <div id="blogpost-box">
+                             <p id="blogpost-title">{{ object.blog_title }}</p>
+                              <p id="blogpost-des">{{ object.blog_details }}</p>
+                              
+                         </div>
+                     </div><!-- blog post -->
+                  </div>
+                  {% endfor %}
+                  <div class="col-sm-3" id="cata-box-part">
+                     <p id="footer-row-title" class="link-title">LINKS</p>
+                     <ul id="cata-list">
+                        <li><span id="blog-cata-list">CATEGORIES</span></li>
+                        <li><hr id="blog-cata-line"></li>
+                        <li><i class="fa fa-chevron-right"></i><span>Painting</span></li>
+                        <li><i class="fa fa-chevron-right"></i><span>Business </span></li>
+                        <li><i class="fa fa-chevron-right"></i><span> Website Design </span></li>
+                        <li><i class="fa fa-chevron-right"></i><span> Music </span></li>
+                        <li><i class="fa fa-chevron-right"></i><span> Photography </span></li>
+                        <li><i class="fa fa-chevron-right"></i><span> Sport </span></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+       </section><!--       /Blog section    -->    
+
+{% endblock %}

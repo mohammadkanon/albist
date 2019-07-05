@@ -1,0 +1,26 @@
+{% load static %}
+
+<section id="our-services">
+  <div class="container">
+     <div class="row">
+         <div id="our-services-text-box">
+            <p id='our-services-small-title'>OUR SERVICES</p>
+            <p id='our-services-big-title'>SERVICES WHAT WE OFFERS</p>
+            <hr id="our-services-line"/>
+            <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers. Our approach is simple and iterative.Sed ut perspiciatis unde omnis.</p>
+         </div>
+         {% for object in services %}
+         <div class="col-sm-4 col-xs-12 our-services-icons">
+            <div class="col-sm-2 col-xs-2">
+               <i class="fa fa-mobile"></i>
+            </div>
+            <div class="col-sm-10 col-xs-10">
+              <p id="our-services-icons-title">{{ object.service_title }}</p>
+               <hr id="our-services-icons-line">
+               <p id="our-services-icons-desc">{{ object.service_detail }}</p>
+            </div>
+         </div>
+         {% endfor %}
+     </div>
+  </div>
+</section> --><!--           /our-services     --> 

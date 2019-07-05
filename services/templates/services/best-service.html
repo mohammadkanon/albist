@@ -1,0 +1,26 @@
+{% load static %}
+
+<section id="our-team">
+  <div class="container">
+     <div class="row">
+         <div id="our-services-text-box">
+            <p id='our-services-small-title'>WHAT WE DO</p>
+            <p id='our-services-big-title'>BEST SERVICES WE OFFER</p>
+            <hr id="our-services-line"/>
+            <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers. Our approach is simple and iterative.Sed ut perspiciatis unde omnis.</p>
+         </div>
+
+         {% for object in best_service %}
+         <div class="col-xs-12 col-sm-3" id="best-service-full-box">
+             <div id="best-service-text-box">
+                 <p id="best-service-box-title">{{ object.best_service_title }}</p>
+                 <hr id="best-service-box-line">
+                 <p id="best-service-box-des">{{ object.best_service_details }}</p>
+                 <i class="fas fa-tv" id="best-service-box-icons"></i>
+             </div>
+         </div>
+         {% endfor %}
+
+     </div>
+  </div>
+</section><!--           /BEST SERVICES      --> 
