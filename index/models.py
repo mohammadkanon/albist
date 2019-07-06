@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class TopSlider(models.Model):
-	slider_img = models.ImageField(upload_to='topslider', null=True)
+	slider_img = models.ImageField(upload_to='topslider', null=True, default='default.jpg')
 
 class OurServices(models.Model):
 	service_title = models.CharField(max_length=50, null=True)

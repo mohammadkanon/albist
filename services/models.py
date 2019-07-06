@@ -8,17 +8,6 @@ class BestServices(models.Model):
 	def __str__(self):
 		return self.best_service_title
 
-class Plan(models.Model):
-	plan_name = models.CharField(max_length=50, null=True)
-
-	def __str__(self):
-		return self.plan_name
-
-class PlanPay(models.Model):
-	plan_pay = models.IntegerField(null=True)
-
-	def __str__(self):
-		return str(self.plan_pay)
 
 class PlanFeaturs(models.Model):
 	feature = models.TextField(null=True)
@@ -26,11 +15,39 @@ class PlanFeaturs(models.Model):
 	def __str__(self):
 		return self.feature
 
-class PlanDetails(models.Model):
-	plan = models.ForeignKey(Plan, on_delete= models.SET_NULL, null=True)
-	planpay = models.ForeignKey(PlanPay, on_delete= models.SET_NULL, null=True)
+class UnlimitedPlan(models.Model):
+	plan_name = models.CharField(max_length=50, null=True)
+	plan_pay = models.IntegerField(null=True)
 	plan_feature = models.ManyToManyField(PlanFeaturs)
 
 	def __str__(self):
-		return str(self.plan)
+		return self.plan_name
+
+
+class PremiumPlan(models.Model):
+	plan_name = models.CharField(max_length=50, null=True)
+	plan_pay = models.IntegerField(null=True)
+	plan_feature = models.ManyToManyField(PlanFeaturs)
+
+	def __str__(self):
+		return self.plan_name
+
+
+class AdvancePlan(models.Model):
+	plan_name = models.CharField(max_length=50, null=True)
+	plan_pay = models.IntegerField(null=True)
+	plan_feature = models.ManyToManyField(PlanFeaturs)
+
+	def __str__(self):
+		return self.plan_name
+
+class BasicPlan(models.Model):
+	plan_name = models.CharField(max_length=50, null=True)
+	plan_pay = models.IntegerField(null=True)
+	plan_feature = models.ManyToManyField(PlanFeaturs)
+
+	def __str__(self):
+		return self.plan_name
+
+
 		

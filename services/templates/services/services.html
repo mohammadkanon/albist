@@ -52,7 +52,7 @@
                    <hr id="serveice-number-line">
                 </div>
              </div>
-          </div> 
+  plan_name       </div> 
        </section><!--           /NUMBER SECTION      --> 
 
        {% include 'index/ourfeaters.html' %}
@@ -69,18 +69,76 @@
                   <p id="our-services-disc">We are driven by creating experiences that deliver results for your business and for your consumers. Our approach is simple and iterative.Sed ut perspiciatis unde omnis.</p>
                </div>
               
-              {% for object in plans %}
+              {% for object in unlimited_plan %}
               <div class="col-sm-3" id="our-plan-price-col">
                    <ul id="basic-plan-list">
                       <li id="our-plan-name">
-                        <span>{{ object.plan }}</span>
+                        <span>{{ object.plan_name }}</span>
                       </li>
                       <li id="our-plan-price">
-                      <span>$</span><span id="our-plan-main-price">{{ object.planpay }}</span><span id="our-plan-price-mon">Per Month</span>
+                      <span>$</span><span id="our-plan-main-price">{{ object.plan_pay }}</span><span id="our-plan-price-mon">Per Month</span>
 
                       </li>
-                      {% for object in featurs %}
-                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ object.feature }}</span></li>
+                      {% for item in object.plan_feature.all  %}
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ item.feature }}</span></li>
+                      {% endfor %}
+                      <li id="button-list-row"><span id="our-plan-price-button">BUY NOW</span></li>
+                   </ul>
+              </div>
+
+             {% endfor %}
+
+
+             {% for object in premium_plan %}
+              <div class="col-sm-3" id="our-plan-price-col">
+                   <ul id="basic-plan-list">
+                      <li id="our-plan-name">
+                        <span>{{ object.plan_name }}</span>
+                      </li>
+                      <li id="our-plan-price">
+                      <span>$</span><span id="our-plan-main-price">{{ object.plan_pay }}</span><span id="our-plan-price-mon">Per Month</span>
+
+                      </li>
+                      {% for item in object.plan_feature.all  %}
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ item.feature }}</span></li>
+                      {% endfor %}
+                      <li id="button-list-row"><span id="our-plan-price-button">BUY NOW</span></li>
+                   </ul>
+              </div>
+
+             {% endfor %}
+
+             {% for object in advance_plan %}
+              <div class="col-sm-3" id="our-plan-price-col">
+                   <ul id="basic-plan-list">
+                      <li id="our-plan-name">
+                        <span>{{ object.plan_name }}</span>
+                      </li>
+                      <li id="our-plan-price">
+                      <span>$</span><span id="our-plan-main-price">{{ object.plan_pay }}</span><span id="our-plan-price-mon">Per Month</span>
+
+                      </li>
+                      {% for item in object.plan_feature.all  %}
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ item.feature }}</span></li>
+                      {% endfor %}
+                      <li id="button-list-row"><span id="our-plan-price-button">BUY NOW</span></li>
+                   </ul>
+              </div>
+
+             {% endfor %}
+
+             {% for object in basic_plan %}
+              <div class="col-sm-3" id="our-plan-price-col">
+                   <ul id="basic-plan-list">
+                      <li id="our-plan-name">
+                        <span>{{ object.plan_name }}</span>
+                      </li>
+                      <li id="our-plan-price">
+                      <span>$</span><span id="our-plan-main-price">{{ object.plan_pay }}</span><span id="our-plan-price-mon">Per Month</span>
+
+                      </li>
+                      {% for item in object.plan_feature.all  %}
+                      <li><span><i class="fa fa-chevron-right list-choose"></i></span><span id="our-plan-price-listall">{{ item.feature }}</span></li>
                       {% endfor %}
                       <li id="button-list-row"><span id="our-plan-price-button">BUY NOW</span></li>
                    </ul>

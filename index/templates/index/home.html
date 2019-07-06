@@ -4,12 +4,22 @@
 	{% block content %}
 
 	   <div class="container">
+
+	   	{% if slider %}
   			<!-- Top Navigation -->
   			<div id="boxgallery" class="boxgallery" data-effect="effect-1">
   				{% for object in slider %}
   				<div class="panel"><img src="{{ object.slider_img.url }}" alt="Image 1"/></div>
   				{% endfor %}
   			</div>
+
+  		{% else %}
+
+  			<div id="boxgallery" class="boxgallery" data-effect="effect-1">
+  				<div class="panel"><img src="{% static 'img/benches.jpg' %}" alt="Image 1"/></div>
+  			</div>
+
+  		{% endif %}
   			<header class="codrops-header">
   				<h1> dream big act </h1>
   				<h1 id='second-title'> small begin now  </h1>
